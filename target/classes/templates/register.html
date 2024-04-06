@@ -1,0 +1,25 @@
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+<link href="css/style.css" rel="stylesheet">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div class="testbox">
+    <h1>Registration</h1>
+
+    <form action="register" method="post">
+        <hr>
+
+        <hr>
+        <label id="icon" for="name"><i class="icon-envelope "></i></label>
+        <input type="email" name="email" id="email" placeholder="Email" required/>
+        <label id="icon" for="name"><i class="icon-user"></i></label>
+        <input type="text" name="name" id="name" placeholder="Name" required/>
+        <label id="icon" for="name"><i class="icon-shield"></i></label>
+        <input type="password" name="password" id="password" placeholder="Password" required/>
+
+        <p>By clicking Register, you agree on our <a href="#">terms and condition</a>.</p>
+        <input type="submit" value="Submit" class="button">
+        <a href="login">You allready have an account</a>
+        <br>
+        <br>
+        <span th:text="${messages}">message</span>
+    </form>
+</div>

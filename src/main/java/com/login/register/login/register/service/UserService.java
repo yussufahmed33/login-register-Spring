@@ -13,20 +13,9 @@ public class UserService {
     UserRepository userRepository;
 
     public UserModel save(UserModel userModel){
-        //String name = userModel.getName();
+
         return userRepository.save(userModel);
     }
-//    public UserModel findByEmail(String email) {
-//        return userRepository.findByEmail(email);
-//    }
-//    public boolean authlogin(String email, String password) {
-//        UserModel userModel = userRepository.findByEmail(email);
-//
-//        return true;
-//        //userModel != null && userModel.getPassword().equals(password);
-//
-//    }
-
     public boolean isValidUser(String email, String password) {
         Optional<UserModel> optionalUser = userRepository.findByEmailAndPassword(email,password);
 
@@ -34,8 +23,6 @@ public class UserService {
             UserModel userModel = optionalUser.get();
             userModel.getPassword().equals(password);
             userModel.getName();
-           // System.out.println(userModel.getName());
-            //return userModel.getPassword().equals(password);
         }else{
         return false;}
         return true;

@@ -39,13 +39,6 @@ public class UserController {
             System.out.println("save");}
         return "login";
     }
-//    @PostMapping("/login")
-//    public String login(@RequestBody UserModel userModel) {
-//        String email = userModel.getEmail();
-//        String password = userModel.getPassword();
-//        userService.isValidUser(email,password);
-//    return "welcome";
-//    }
     @PostMapping("/login")
     public String login(@RequestParam String email, @RequestParam String password,UserModel userModel,Model model) {
         if (userService.isValidUser(email, password)) {
@@ -58,14 +51,5 @@ public class UserController {
             return "login_failed";
         }
     }
-//    @PostMapping("/login")
-//    public String login(@RequestBody UserModel userModel){
-//        String email=userModel.getEmail();
-//        String password=userModel.getPassword();
-//        if(userService.isValidUser(email,password)){
-//            return"login_sucsses";
-//        }else{
-//            return"login_failed";
-//        }
+
     }
-//}
